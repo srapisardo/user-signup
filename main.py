@@ -25,48 +25,48 @@ def validate_fields():
 
     if len(username) < 3:
         username = ''
-        username_error = "That's not a valid username"
+        username_error = "Invalid username. Must be no fewer than 3 characters and no longer than 20 characters"
     elif len(username) > 20:
         username = ''
-        username_error = "That's not a valid username"
+        username_error = "Invalid username. Must be no fewer than 3 characters and no longer than 20 characters"
     else:
         username = username
 
     if len(password) < 3:
         password = ""
-        password_error = "That's not a valid password"
+        password_error = "Invalid password. Must be no fewer than 3 and no longer than 20 characters"
 
     if len(password_validate) < 3:
         password_validate = ""
-        password_validate_error = "Passwords don't match"
+        password_validate_error = "Passwords do not match"
 
     if len(password) > 20:
         password = ""
-        password_error = "That's not a valid password"
+        password_error = "Invalid password. Must be no fewer than 3 and no longer than 20 characters"
 
     if len(password_validate) > 20:
         password_validate = ""
-        password_validate_error = "Passwords don't match"   
+        password_validate_error = "Passwords do not match"   
 
     if password != password_validate:
         password = ""
         password_validate = ""
-        pw_error = "Passwords don't match"
+        pw_error = "Passwords do not match"
     if len(email) > 0:
         if not(email.endswith('@') or email.startswith('@') or email.endswith('.') or email.startswith('.')) and email.count('@') == 1 and email.count('.') == 1:
             email=email
         else:
             email = ''
-            email_error = "That's not a valid email" 
+            email_error = "Invalid email" 
     else:
         email = ''
 
     if username == "":
-        username_error = 'Username must be more than 3 characters but no more than 20'
+        username_error = "Invalid username. Must be no fewer than 3 characters and no longer than 20 characters"
     if password == "":
-        password_error = 'Set a password, no fewer than 3 and no longer than 20 characters'
+        password_error = "Invalid password. Must be no fewer than 3 and no longer than 20 characters"
     if password_validate == "":
-        password_validate_error = 'Enter a password to match the one above, no fewer than 3 and no longer than 20 characters'
+        password_validate_error = "Passwords do not match"
 
 
     if not username_error and not pw_error and not password_error and not password_validate_error and not email_error:
