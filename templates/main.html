@@ -1,33 +1,45 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block content %}
+{% block content %}    
 
-<form action = "" method="POST">
-  <label>
-    Username
-    <input type="text" name="username" value='{{username}}'/>
-    <p class="error">{{username_error}}</p>
-  </label>
-  <label>
-    Password
-    <input type="password" name="pw1"/>
-    <p class="error">{{pw1_error}}</p>
-    <p class="error">{{pw_error}}</p>
-    <p class="error">{{pw1empty_error}}</p>
-  </label>
-  <label>
-    Verify Password
-    <input type="password" name="pw2"/>
-    <p class="error">{{pw2_error}}</p>
-    <p class="error">{{pw_error}}</p>
-    <p class="error">{{pw2empty_error}}</p>
-  </label>
-  <label>
-    Email (Optional)
-    <input type="text" name="email" value='{{email}}'/>
-    <p class="error">{{email_error}}</p>
-  </label>
-  <input type="submit" value="Sign Up"/>
-</form>
+    <form method='POST'>
+       <table>
+           <tr>
+            <td><label><span class="form_label">Username</span>
+                <input name="username" type="text" value='{{username}}' /> </td>
+            </label>
+            <td><p class="error">{{username_error}}</p></td>
+            </tr>
+        </table>
 
-{% endblock %}
+        <table>
+            <tr>
+            <td><label><span class="form_label">Password</span>
+                <input name="password" type="password" value='{{password}}' /> </td>
+            </label>
+            <td><p class="error">{{password_error}}</p></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+            <td><label><span class="form_label">Password Validate</span>
+                <input name="password_validate" type="password" value='{{password_validate}}' /> </td>
+            </label>
+            <td><p class="error">{{password_validate_error}}</p></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+            <td><label><span class="form_label">E-mail (optional)</span>
+                <input name="email" type="text" value='{{email}}' /> </td>
+            </label>
+            <td><p class="error">{{email_error}}</p></td>
+            </tr>
+        </table>
+
+        <input class="submit" type="submit" value="Submit" />
+    </form>
+
+{% endblock %}  
