@@ -25,16 +25,19 @@ def validate_fields():
 
     if len(username) < 3:
         username = ''
-        username_error = "Invalid username. Must be no fewer than 3 characters and no longer than 20 characters"
+        username_error = "Invalid username"
     elif len(username) > 20:
         username = ''
-        username_error = "Invalid username. Must be no fewer than 3 characters and no longer than 20 characters"
+        username_error = "Invalid username"
+    elif " " in username: 
+        username = ''
+        username_error = "Invalid username"
     else:
         username = username
 
     if len(password) < 3:
         password = ""
-        password_error = "Invalid password. Must be no fewer than 3 and no longer than 20 characters"
+        password_error = "Invalid password"
 
     if len(password_validate) < 3:
         password_validate = ""
@@ -42,9 +45,17 @@ def validate_fields():
 
     if len(password) > 20:
         password = ""
-        password_error = "Invalid password. Must be no fewer than 3 and no longer than 20 characters"
+        password_error = "Invalid password"
 
     if len(password_validate) > 20:
+        password_validate = ""
+        password_validate_error = "Passwords do not match"   
+
+    if " " in password:
+        password = ""
+        password_error = "Invalid password"
+
+    if " " in password_validate:
         password_validate = ""
         password_validate_error = "Passwords do not match"   
 
@@ -62,9 +73,9 @@ def validate_fields():
         email = ''
 
     if username == "":
-        username_error = "Invalid username. Must be no fewer than 3 characters and no longer than 20 characters"
+        username_error = "Invalid username"
     if password == "":
-        password_error = "Invalid password. Must be no fewer than 3 and no longer than 20 characters"
+        password_error = "Invalid password"
     if password_validate == "":
         password_validate_error = "Passwords do not match"
 
